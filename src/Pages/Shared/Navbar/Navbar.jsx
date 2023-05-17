@@ -4,14 +4,14 @@ import logo from '../../../assets/car-side-solid.svg'
 const Navbar = () => {
     const navItems = <>
         <li><Link to='/'>Home</Link></li>
-        <li><Link to=''>Toys </Link></li>
-        <li><Link to=''>My Toys</Link></li>
-        <li><Link to=''>Add Toy</Link></li>
-        <li> <Link to=''>Login</Link></li>
+        <li><Link to='/toys'>Toys </Link></li>
+        <li><Link to='/mytoys'>My Toys</Link></li>
+        <li><Link to='/addtoy'>Add Toy</Link></li>
+        <li> <Link to='/login'>Login</Link></li>
     </>
 
     return (
-        <div className="navbar bg-base-300">
+        <div className="navbar bg-base-300 px-10">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -23,7 +23,7 @@ const Navbar = () => {
                 </div>
                 <Link to='/'>
                     <div className="flex gap-5">
-                        <p className="text-3xl">Toyazone</p>
+                        <p className="text-3xl text-red-900 font-semibold">Toyazone</p>
                         <img className="w-10 rounded-full" src={logo} alt="logo" />
                     </div>
                 </Link>
@@ -39,7 +39,7 @@ const Navbar = () => {
             <div className="navbar-end">
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                     <div className="w-10 rounded-full">
-                        <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                        <img src={logo} />
                     </div>
                 </label>
             </div>
