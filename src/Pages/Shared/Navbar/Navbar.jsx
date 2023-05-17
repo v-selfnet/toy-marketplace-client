@@ -1,14 +1,35 @@
 import { Link } from "react-router-dom";
 import logo from '../../../assets/car-side-solid.svg'
+import { useContext } from "react";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext)
+
+    const handelSignout = () => {
+        logOut()
+            .then(() => console.log('Sign out success'))
+            .catch(error => console.error(error.message))
+    }
+
     const navItems = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/toys'>Toys </Link></li>
         <li><Link to='/mytoys'>My Toys</Link></li>
         <li><Link to='/addtoy'>Add Toy</Link></li>
-        <li> <Link to='/login'>Login</Link></li>
+        <div>
+            {
+                user ?
+                    <li>
+                        <Link onClick={handelSignout} className="" to='/login'>Signout</Link>
+                        <span>{user.displayName ? user.displayName : user.email}</span>
+                    </li> :
+                    <li><Link className="" to='/login'>Login</Link></li>
+            }
+        </div>
     </>
+
+
 
     return (
         <div className="navbar bg-base-300 px-10">
@@ -32,13 +53,17 @@ const Navbar = () => {
                 <ul className="menu menu-horizontal px-1">
                     {navItems}
                 </ul>
-                {/* {
-                    user && user.email
-                } */}
+
             </div>
             <div className="navbar-end">
+
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                     <div className="w-10 rounded-full">
+                        <div>
+                            {
+                                user.photoURL && <img className="w-10 rounded-full ml-5 border bottom-2" src={user.photoURL }/> 
+                            }
+                        </div>
                         <img src={logo} />
                     </div>
                 </label>
