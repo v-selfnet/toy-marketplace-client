@@ -1,9 +1,8 @@
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData } from "react-router-dom";
 
-const RegularDetail = () => {
+const SportsDetail = () => {
     const carDetail = useLoaderData();
     const { _id, img, name, price, rating, description } = carDetail;
-
     return (
         <div className="card w-96 bg-base-100 shadow-xl my-10">
             <img className="rounded-2xl" src={img} alt="Regular Car" />
@@ -20,4 +19,4 @@ const RegularDetail = () => {
     );
 };
 
-export default RegularDetail;
+export default SportsDetail;

@@ -12,6 +12,7 @@ import Sports from "../Pages/Home/Sports";
 import Police from "../Pages/Home/Police";
 import Blog from "../Pages/Blog/Blog";
 import RegularDetail from "../Pages/Home/RegularDetail";
+import SportsDetail from "../Pages/Home/SportsDetail";
 
 
 const router = createBrowserRouter([
@@ -22,24 +23,33 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
+            },
+            {
+                path: '/toys',
+                element: <Toys></Toys>,
                 children: [
-                    { 
-                        path: '/regular', 
+                    {
+                        path: '/toys/regular',
                         element: <Regular></Regular>,
                         loader: () => fetch('http://localhost:3000/regular')
                     },
                     {
-                        path:'/regular/:id',
+                        path: '/toys/regular/:id',
                         element: <RegularDetail></RegularDetail>,
-                        loader: ({params}) => fetch(`http://localhost:3000/regular/${params.id}`)
+                        loader: ({ params }) => fetch(`http://localhost:3000/regular/${params.id}`)
                     },
-                    { path: '/sports', element: <Sports></Sports> },
-                    { path: '/police', element: <Police></Police> },
+                    {
+                        path: '/toys/sports',
+                        element: <Sports></Sports>,
+                        loader: () => fetch('http://localhost:3000/sports')
+                    },
+                    {
+                        path: '/toys/sports/:id',
+                        element: <SportsDetail></SportsDetail>,
+                        loader: ({ params }) => fetch(`http://localhost:3000/sports/${params.id}`)
+                    },
+                    { path: '/toys/police', element: <Police></Police> },
                 ]
-            },
-            {
-                path: '/toys',
-                element: <Toys></Toys>
             },
             {
                 path: '/mytoys',
