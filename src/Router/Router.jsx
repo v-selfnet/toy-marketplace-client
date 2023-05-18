@@ -6,6 +6,10 @@ import MyToys from "../Pages/MyToys/MyToys";
 import AddToy from "../Pages/AddToy/AddToy";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
+import ErrorPage from "../ErrorPage/ErrorPage";
+import Regular from "../Pages/Home/Regular";
+import Sports from "../Pages/Home/Sports";
+import Police from "../Pages/Home/Police";
 const router = createBrowserRouter([
     {
         path: '/',
@@ -13,7 +17,12 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home></Home>
+                element: <Home></Home>,
+                children: [
+                    { path: '/regular', element: <Regular></Regular> },
+                    { path: '/sports', element: <Sports></Sports> },
+                    { path: '/police', element: <Police></Police> }
+                ]
             },
             {
                 path: '/toys',
@@ -32,9 +41,17 @@ const router = createBrowserRouter([
                 element: <Login></Login>
             },
             {
-                path:'/register',
+                path: '/register',
                 element: <Register></Register>
-              },
+            },
+
+
+
+
+            {
+                path: '*',
+                element: <ErrorPage></ErrorPage>
+            }
         ]
     }
 ]);

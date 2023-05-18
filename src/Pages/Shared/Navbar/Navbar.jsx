@@ -59,11 +59,11 @@ const Navbar = () => {
 
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                     <div className="w-10 rounded-full">
-                        <div>
+                        {/* <div> */}
                             {
-                                user.photoURL && <img className="w-10 rounded-full ml-5 border bottom-2" src={user.photoURL }/> 
+                                user && <img className="w-10 rounded-full border bottom-2" src={user.photoURL }/> 
                             }
-                        </div>
+                        {/* </div> */}
                         <img src={logo} />
                     </div>
                 </label>

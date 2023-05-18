@@ -1,8 +1,13 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import useTitle from "../../Hooks/useTitle";
+import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 const Login = () => {
+    // set dynamic title
+    useTitle('Login');
+
     const { signIn } = useContext(AuthContext)
 
     const handleSignin = event => {
@@ -24,10 +29,9 @@ const Login = () => {
 
     }
     return (
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero">
             <div className="hero-content flex-col lg:flex-row gap-40">
                 <div className="text-center lg:text-left w-1/2 space-y-10">
-                    {/* <img src={''} alt="Login Image Loading" /> */}
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <div className="card-body">
@@ -46,21 +50,21 @@ const Login = () => {
                                 <input type="password" name="password" placeholder="password" className="input input-bordered" required />
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                                    {/* <p className='text-green-500 text-right text-xs'>{success}</p> */}
                                 </label>
                             </div>
                             <div className="form-control mt-6">
                                 <input type="submit" value="Login" className="btn btn-primary" />
                             </div>
                         </form>
-                        {/* <SocialLogin></SocialLogin> */}
-                        <p className='text-xs'>Do not have an Account? <Link to='/register' className='text-orange-600'>Please Register</Link></p>
-
-
+                        <SocialLogin></SocialLogin>
+                        <p className='text-xs mt-3'>Do not have an Account? <Link to='/register' className='text-orange-600'>Please Register</Link></p>
                     </div>
                 </div>
             </div>
         </div>
+
+
+        
     );
 };
 

@@ -2,10 +2,15 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
+import useTitle from "../../Hooks/useTitle";
+import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 
 
 const Register = () => {
+    // set dynamic title
+    useTitle('Register');
+
     const { createUser } = useContext(AuthContext)
 
     const handleRegister = event => {
@@ -43,10 +48,9 @@ const Register = () => {
             .catch(error => console.error(error.message))
     }
     return (
-        <div className="hero min-h-screen bg-base-200">
-            <div className="hero-content flex-col lg:flex-row-reverse gap-40">
+        <div className="hero">
+            <div className="hero-content flex-col lg:flex-row gap-40">
                 <div className="text-center lg:text-left w-1/2 space-y-10">
-                    {/* <img src={registerImage} alt="Login Image Loading" /> */}
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <div className="card-body">
@@ -80,8 +84,8 @@ const Register = () => {
                                 <input type="submit" value="Register" className="btn btn-primary" />
                             </div>
                         </form>
-                        {/* <SocialLogin></SocialLogin> */}
-                        <p className='text-xs'>Do not have an Account? <Link to='/login' className='text-orange-600'>Please Login</Link></p>
+                        <SocialLogin></SocialLogin>
+                        <p className='text-xs mt-3'>Do not have an Account? <Link to='/login' className='text-orange-600'>Please Login</Link></p>
                     </div>
                 </div>
             </div>
