@@ -11,6 +11,9 @@ import Regular from "../Pages/Home/Regular";
 import Sports from "../Pages/Home/Sports";
 import Police from "../Pages/Home/Police";
 import Blog from "../Pages/Blog/Blog";
+import RegularDetail from "../Pages/Home/RegularDetail";
+
+
 const router = createBrowserRouter([
     {
         path: '/',
@@ -25,8 +28,13 @@ const router = createBrowserRouter([
                         element: <Regular></Regular>,
                         loader: () => fetch('http://localhost:3000/regular')
                     },
+                    {
+                        path:'/regular/:id',
+                        element: <RegularDetail></RegularDetail>,
+                        loader: ({params}) => fetch(`http://localhost:3000/regular/${params.id}`)
+                    },
                     { path: '/sports', element: <Sports></Sports> },
-                    { path: '/police', element: <Police></Police> }
+                    { path: '/police', element: <Police></Police> },
                 ]
             },
             {
@@ -53,11 +61,6 @@ const router = createBrowserRouter([
                 path: '/blog',
                 element: <Blog></Blog>
             },
-
-
-
-
-
             {
                 path: '*',
                 element: <ErrorPage></ErrorPage>
