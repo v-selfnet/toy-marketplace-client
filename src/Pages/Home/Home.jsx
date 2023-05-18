@@ -12,6 +12,7 @@ const Home = () => {
             <Link to='sports'>Sports</Link>
             <Link to='police'>Police</Link>
         </div>
+        <h1 className="text-3xl text-center text-red-800 my-10">Welcome to Toy Car Zone</h1>
             <Outlet></Outlet>
         </>
     );

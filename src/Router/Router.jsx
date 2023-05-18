@@ -10,6 +10,7 @@ import ErrorPage from "../ErrorPage/ErrorPage";
 import Regular from "../Pages/Home/Regular";
 import Sports from "../Pages/Home/Sports";
 import Police from "../Pages/Home/Police";
+import Blog from "../Pages/Blog/Blog";
 const router = createBrowserRouter([
     {
         path: '/',
@@ -19,7 +20,11 @@ const router = createBrowserRouter([
                 path: '/',
                 element: <Home></Home>,
                 children: [
-                    { path: '/regular', element: <Regular></Regular> },
+                    { 
+                        path: '/regular', 
+                        element: <Regular></Regular>,
+                        loader: () => fetch('http://localhost:3000/regular')
+                    },
                     { path: '/sports', element: <Sports></Sports> },
                     { path: '/police', element: <Police></Police> }
                 ]
@@ -44,6 +49,11 @@ const router = createBrowserRouter([
                 path: '/register',
                 element: <Register></Register>
             },
+            {
+                path: '/blog',
+                element: <Blog></Blog>
+            },
+
 
 
 

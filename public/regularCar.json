@@ -1,0 +1,20 @@
+[
+    {
+        "img": "https://i.ibb.co/2M2HMcD/Regular-01.png",
+        "name": "BMW",
+        "price": "200.00",
+        "rating": "5"
+    },
+    {
+        "img": "https://i.ibb.co/jhFf6kS/regular-02.png",
+        "name": "Mercedes",
+        "price": "300.00",
+        "rating": "5"
+    },
+    {
+        "img": "https://i.ibb.co/6t2RJ45/regular-03.png",
+        "name": "Rolls Royce",
+        "price": "400.00",
+        "rating": "5"
+    }
+]
