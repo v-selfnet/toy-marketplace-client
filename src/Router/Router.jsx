@@ -13,6 +13,7 @@ import Police from "../Pages/Home/Police";
 import Blog from "../Pages/Blog/Blog";
 import RegularDetail from "../Pages/Home/RegularDetail";
 import SportsDetail from "../Pages/Home/SportsDetail";
+import PoliceDetail from "../Pages/Home/PoliceDetail";
 
 
 const router = createBrowserRouter([
@@ -48,7 +49,16 @@ const router = createBrowserRouter([
                         element: <SportsDetail></SportsDetail>,
                         loader: ({ params }) => fetch(`http://localhost:3000/sports/${params.id}`)
                     },
-                    { path: '/toys/police', element: <Police></Police> },
+                    {
+                        path: '/toys/police',
+                        element: <Police></Police>,
+                        loader: () => fetch('http://localhost:3000/police')
+                    },
+                    {
+                        path: '/toys/police/:id',
+                        element: <PoliceDetail></PoliceDetail>,
+                        loader: ({ params }) => fetch(`http://localhost:3000/police/${params.id}`)
+                    },
                 ]
             },
             {
