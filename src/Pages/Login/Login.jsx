@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import useTitle from "../../Hooks/useTitle";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
@@ -8,7 +8,12 @@ const Login = () => {
     // set dynamic title
     useTitle('Login');
 
-    const { signIn } = useContext(AuthContext)
+    const { signIn } = useContext(AuthContext);
+    const location = useLocation()
+    const navigate = useNavigate();
+
+    const from = location.state?.from?.pathname || '/';
+    console.log(from);
 
     const handleSignin = event => {
         event.preventDefault();
@@ -20,7 +25,8 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 const loggedUser = result.user;
-                console.log(loggedUser)
+                console.log(loggedUser);
+                navigate(from, {replace: true})
             })
             .catch(error => {
                 console.error(error.message)

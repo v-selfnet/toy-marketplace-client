@@ -14,6 +14,7 @@ import Blog from "../Pages/Blog/Blog";
 import RegularDetail from "../Pages/Home/RegularDetail";
 import SportsDetail from "../Pages/Home/SportsDetail";
 import PoliceDetail from "../Pages/Home/PoliceDetail";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -32,32 +33,33 @@ const router = createBrowserRouter([
                     {
                         path: '/toys/regular',
                         element: <Regular></Regular>,
-                        loader: () => fetch('http://localhost:3000/regular')
+                        // loader: () => fetch('http://localhost:3000/regular')
+                        loader: () => fetch('https://toy-marketplace-server-virid.vercel.app/regular')
                     },
                     {
                         path: '/toys/regular/:id',
-                        element: <RegularDetail></RegularDetail>,
-                        loader: ({ params }) => fetch(`http://localhost:3000/regular/${params.id}`)
+                        element: <PrivateRoute><RegularDetail></RegularDetail></PrivateRoute>,
+                        loader: ({ params }) => fetch(`https://toy-marketplace-server-virid.vercel.app/regular/${params.id}`)
                     },
                     {
                         path: '/toys/sports',
                         element: <Sports></Sports>,
-                        loader: () => fetch('http://localhost:3000/sports')
+                        loader: () => fetch('https://toy-marketplace-server-virid.vercel.app/sports')
                     },
                     {
                         path: '/toys/sports/:id',
-                        element: <SportsDetail></SportsDetail>,
-                        loader: ({ params }) => fetch(`http://localhost:3000/sports/${params.id}`)
+                        element: <PrivateRoute><SportsDetail></SportsDetail></PrivateRoute>,
+                        loader: ({ params }) => fetch(`https://toy-marketplace-server-virid.vercel.app/sports/${params.id}`)
                     },
                     {
                         path: '/toys/police',
                         element: <Police></Police>,
-                        loader: () => fetch('http://localhost:3000/police')
+                        loader: () => fetch('https://toy-marketplace-server-virid.vercel.app/police')
                     },
                     {
                         path: '/toys/police/:id',
-                        element: <PoliceDetail></PoliceDetail>,
-                        loader: ({ params }) => fetch(`http://localhost:3000/police/${params.id}`)
+                        element: <PrivateRoute><PoliceDetail></PoliceDetail></PrivateRoute>,
+                        loader: ({ params }) => fetch(`https://toy-marketplace-server-virid.vercel.app/${params.id}`)
                     },
                 ]
             },
@@ -81,11 +83,12 @@ const router = createBrowserRouter([
                 path: '/blog',
                 element: <Blog></Blog>
             },
-            {
-                path: '*',
-                element: <ErrorPage></ErrorPage>
-            }
+            
         ]
+    },
+    {
+        path: '*',
+        element: <ErrorPage></ErrorPage>
     }
 ]);
 export default router;

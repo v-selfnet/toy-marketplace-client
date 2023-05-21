@@ -1,10 +1,13 @@
 [
     {
         "img": "https://i.ibb.co/4msJ5sJ/regular-01.png",
-        "name": "BMW",
+        "name": "BMW iR",
         "price": "200.00",
         "rating": "5",
-        "description": "information about this item Detailed model of a MINI Countryman in pocket format for playing and collecting, For small and large MINI fans Stable and robust design thanks to the metal body, functional rubber wheels, doors that can be opened Perfect gift for holidays or birthdays, but also as an ornamental element Perfect to take with you on a trip, fun guaranteed thanks to the countless possible game combinations within the various siku worlds Contents: 1 siku 1454, MINI Countryman, Material: Metal/Plastic, Dimensions: 7.5 x 3.8 x 2.9 cm, Weight: 0.048 kg, Colour: Yellow/Black"
+        "description": "information about this item Detailed model of a MINI Countryman in pocket format for playing and collecting, For small and large MINI fans Stable and robust design thanks to the metal body, functional rubber wheels, doors that can be opened Perfect gift for holidays or birthdays, but also as an ornamental element Perfect to take with you on a trip, fun guaranteed thanks to the countless possible game combinations within the various siku worlds Contents: 1 siku 1454, MINI Countryman, Material: Metal/Plastic, Dimensions: 7.5 x 3.8 x 2.9 cm, Weight: 0.048 kg, Colour: Yellow/Black",
+        "sub_category": "BMW",
+        "available_qty": "50"
+
 
     },
     {

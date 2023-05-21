@@ -1,11 +1,14 @@
 import useTitle from "../../Hooks/useTitle";
+import Banner from "./Banner";
 
 const Home = () => {
     // set dynamic title
     useTitle('Home');
 
     return (
-        <h3>Home</h3>
+        <div className="w-4/5 mx-auto my-12">
+            <Banner></Banner>
+        </div>
     );
 };
 
