@@ -7,7 +7,7 @@ const Toys = () => {
     // set dynamic title
     useTitle('All Toys');
 
-    const imageGalary = <div className="flex gap-10">
+    const imageGalary = <div className="flex gap-10 mb-10">
         <img className="rounded-full w-40" src="https://i.ibb.co/4msJ5sJ/regular-01.png" alt="" />
         <img className="rounded-full w-40" src="https://i.ibb.co/jhFf6kS/regular-02.png" alt="" />
         <img className="rounded-full w-40" src="https://i.ibb.co/6t2RJ45/regular-03.png" alt="" />
@@ -27,7 +27,7 @@ const Toys = () => {
 
     return (
         <>
-           {categoryLinks}
+            {categoryLinks}
             <h1 className="text-3xl text-center text-red-800 my-10">Welcome to Toy Car Zone</h1>
             <Marquee>
                 {imageGalary}

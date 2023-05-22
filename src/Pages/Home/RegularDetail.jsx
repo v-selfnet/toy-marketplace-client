@@ -1,4 +1,4 @@
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const RegularDetail = () => {
     const carDetail = useLoaderData();
@@ -14,7 +14,9 @@ const RegularDetail = () => {
                 <p>Ratings: {rating}</p><hr />
                 <p className='text-xl font-bold'>Detail Information:</p>
                 <p>{description}</p><hr />
-                <button className="btn btn-primary w-full mt-6">Add My List</button>
+                <Link to='/mytoys'>
+                    <button className="btn btn-primary w-full mt-6">Add My List</button>
+                </Link>
             </div>
         </div>
     );

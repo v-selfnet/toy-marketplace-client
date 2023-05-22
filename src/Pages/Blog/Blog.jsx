@@ -1,4 +1,7 @@
+import useTitle from "../../Hooks/useTitle";
+
 const Blog = () => {
+    useTitle('Blog');
     return (
         <div>
             <h3>Welcome to my Blog</h3>
